@@ -5,6 +5,9 @@ import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.filter.log.LogDetail;
 import io.restassured.http.ContentType;
 import io.restassured.specification.RequestSpecification;
+import jdk.jfr.ContentType;
+import lombok.Data;
+import lombok.RequiredArgsConstructor;
 import lombok.Value;
 import lombok.val;
 
@@ -68,7 +71,6 @@ public class DataGenerator {
             return registeredUser;
         }
     }
-
 
 
     @Value
