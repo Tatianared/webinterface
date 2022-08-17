@@ -3,11 +3,8 @@ package ru.netology.testmode.data;
 import com.github.javafaker.Faker;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.filter.log.LogDetail;
-import io.restassured.http.ContentType;
 import io.restassured.specification.RequestSpecification;
 import jdk.jfr.ContentType;
-import lombok.Data;
-import lombok.RequiredArgsConstructor;
 import lombok.Value;
 import lombok.val;
 
@@ -16,14 +13,6 @@ import java.util.Locale;
 import static io.restassured.RestAssured.given;
 
 public class DataGenerator {
-
-    @Data
-    @RequiredArgsConstructor
-    public class RegistrationCard {
-        private final String name;
-        private final String password;
-        private final String status;
-    }
 
 
     private static final RequestSpecification requestSpec = new RequestSpecBuilder()
