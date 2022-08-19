@@ -4,7 +4,7 @@ import com.github.javafaker.Faker;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.filter.log.LogDetail;
 import io.restassured.specification.RequestSpecification;
-import jdk.jfr.ContentType;
+import io.restassured.http.ContentType;
 import lombok.Value;
 import lombok.val;
 
@@ -28,10 +28,7 @@ public class DataGenerator {
     private static void sendRequest(RegistrationDto user) {
         given()
                 .spec(requestSpec)
-                .body(new RegistrationUserData(
-                        user.getLogin(),
-                        user.getPassword(),
-                        user.getStatus()))
+                .body(user)
                 .when()
                 .post("/api/system/users")
                 .then()
